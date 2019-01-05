@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include<stdbool.h>
 
-int prime();
+bool prime();
 int armstrong();
 int perfect();
 
@@ -28,17 +28,17 @@ int main()
         printf("%d is not perfect number\n",num);
 
 }
-int prime(int n)
+bool prime(int n)
 {
     int i;
-    bool check=1;
+    if(n<=1)
+        return false;
     for(i=2; i<n; i++){
-        if(n%2==0){
-            check=0;
-            break;
-        }
+        if(n%i==0)
+            return false;
     }
-    return check;
+
+    return true;
 }
 
 int armstrong(int n)
